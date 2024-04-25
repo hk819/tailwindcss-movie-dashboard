@@ -472,10 +472,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.fixed{
-  position: fixed;
-}
-
 .absolute{
   position: absolute;
 }
@@ -492,20 +488,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 0px;
 }
 
-.bottom-2{
-  bottom: 0.5rem;
-}
-
-.right-2{
-  right: 0.5rem;
-}
-
 .-z-10{
   z-index: -10;
-}
-
-.z-10{
-  z-index: 10;
 }
 
 .-mx-7{
@@ -555,6 +539,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-10{
   margin-top: 2.5rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .block{
@@ -677,6 +665,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+
+@keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+
+.animate-pulse{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer{
@@ -858,6 +863,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
+.border-t-green-600{
+  --tw-border-opacity: 1;
+  border-top-color: rgb(22 163 74 / var(--tw-border-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -885,9 +895,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(31 41 55 / 0.8);
 }
 
-.bg-yellow-200{
+.bg-green-200{
   --tw-bg-opacity: 1;
-  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
+
+.bg-red-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -1065,6 +1080,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-xxs{
   font-size: .65rem;
+}
+
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold{
@@ -1286,6 +1306,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-green-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 101 52 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-red-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:fill-white{
   fill: #fff;
 }
@@ -1309,25 +1339,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (min-width: 350px){
-  .xs\:inline-block{
-    display: inline-block;
-  }
-
-  .xs\:hidden{
-    display: none;
-  }
-}
-
 @media (min-width: 640px){
-  .sm\:inline-block{
-    display: inline-block;
-  }
-
-  .sm\:hidden{
-    display: none;
-  }
-
   .sm\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1347,12 +1359,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: block;
   }
 
-  .md\:inline-block{
-    display: inline-block;
-  }
-
   .md\:hidden{
     display: none;
+  }
+
+  .md\:w-1\/2{
+    width: 50%;
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -1360,27 +1381,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:block{
     display: block;
   }
-
-  .lg\:inline-block{
-    display: inline-block;
-  }
-
-  .lg\:hidden{
-    display: none;
-  }
 }
 
 @media (min-width: 1280px){
   .xl\:block{
     display: block;
-  }
-
-  .xl\:inline-block{
-    display: inline-block;
-  }
-
-  .xl\:hidden{
-    display: none;
   }
 }
 
@@ -1388,14 +1393,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .\32xl\:mx-auto{
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .\32xl\:inline-block{
-    display: inline-block;
-  }
-
-  .\32xl\:hidden{
-    display: none;
   }
 
   .\32xl\:max-w-screen-2xl{
