@@ -1,0 +1,22 @@
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
+  #webcam {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
